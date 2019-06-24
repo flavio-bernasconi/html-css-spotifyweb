@@ -1,0 +1,38 @@
+body{
+  margin:0;
+  padding: 0;
+}
+
+main{
+  background: linear-gradient(15deg, #3c4452 0%, #040405 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: calc(100% - 300px);
+  margin-left: 300px;
+}
+aside{
+  position: fixed;
+  width: 300px;
+  background: red;
+  height:100vh;
+}
+footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 100px;
+  background: blue;
+  width: 100%;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  aside{
+    width: 60px;
+  }
+  main{
+    margin-left: 0;
+    width: 100%;
+  }
+}
