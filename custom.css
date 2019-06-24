@@ -29,7 +29,7 @@ aside{
   position: fixed;
   width: 230px;
   background: black;
-  height:calc(100vh - 100px);
+  height:calc(100vh - 110px);
   display: flex;
   justify-content: space-between;
   flex-direction: column;
@@ -132,7 +132,12 @@ aside{
 .profile hr{
   opacity: .4;
 }
-
+.profile  img:nth-child(2){
+  display: none;
+  width: 30px;
+  margin: auto;
+  border-radius: 50%
+}
 
 
 
@@ -149,6 +154,11 @@ aside{
 main{
   width: calc(100% - 230px);
   margin-left: 230px;
+}
+/* spaziatore */
+.vuoto{
+  height: 100px;
+  width: 100%;
 }
 
 .bk-fixed{
@@ -175,24 +185,66 @@ main{
 .menu-options ul li a{
   color:white;
   text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  position: relative;
+  opacity: .7
 }
+.menu-options ul li .active{
+  opacity: 1;
+}
+.menu-options ul li .active:after{
+  position: absolute;
+  content: '';
+  height: 2px;
+  bottom: -8px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  width: 50%;
+  background: rgb(29,184,83);
+  opacity: 1
+
+}
+.menu-options ul li a:hover{
+  opacity: 1;
+}
+
 /* SEZIONE ALBUM E ARTISITI */
 .musics{
   display: flex;
   flex-flow: row wrap;
   width: 85%;
   margin:auto;
+  margin-bottom: 60px;
 }
 /* testo sopra le immagini album */
 .text{
   width: 100%;
   color: white;
-  font-size: 2rem;
-  font-weight: 900;
-}
-.text{
   padding-left: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
 }
+.text h3{
+  font-size: 2rem;
+  font-weight: 700;
+}
+.more{
+  display: none;
+  color: white;
+  opacity: .7;
+  font-size: 13px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-right: 20px;
+}
+
+
+
+
 /* sezione con le iummagini album e artisti */
 .album{
   display: flex;
@@ -227,7 +279,9 @@ main{
 .container-img{
   position: relative;
 }
-
+.container-img > img{
+  box-shadow: -2px 2px 6px rgb(13, 13, 13);
+}
 .middle {
   transition: .5s ease;
   opacity: 0;
@@ -262,14 +316,113 @@ main{
 
 
 
-footer{
+.barra{
+  box-sizing: border-box;
   position: fixed;
   bottom: 0;
   left: 0;
-  height: 100px;
+  height: 110px;
   background: rgb(40,40,40);
   width: 100%;
+  box-shadow: inset 0px 5px 5px rgb(33, 33, 33);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  padding-left:20px;
 }
+
+
+.song{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+}
+.song > img{
+  height: 70px;
+  width: auto;
+  box-shadow: 0px 5px 8px rgb(33, 33, 33);
+  margin-right: 15px;
+
+
+}
+.song .link-artist a{
+  display: block;
+  color: white;
+  opacity: .7;
+  font-size: 12px;
+  margin-right: 40px;
+}
+
+
+.song a:first-child{
+  font-size: 13px;
+  margin-bottom:  5px;
+  opacity: 0.9;
+}
+
+.cuore > img{
+  width: 18px;
+  margin-right: 10px;
+}
+
+
+
+/* sezione centrale barra song */
+.player{
+  width: 50%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: column wrap;
+  align-items:
+}
+.icone-barra{
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  cursor: pointer;
+  align-items: center;
+}
+
+.icone-barra img{
+  width: 20px;
+  margin: 0 20px;
+  opacity: .7;
+}
+.icone-barra img:hover{
+  opacity: 1;
+}
+.icone-barra img.big-icon{
+  width: 35px;
+}
+
+
+.timeline{
+  display: flex;
+  justify-content: center;
+}
+input[type=range] {
+  width:80%;
+}
+
+
+
+
+.volume{
+  width: 15%;
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -278,16 +431,16 @@ footer{
 
 @media (max-width: 1700px) {
   .musics{
-    width: 95%;
+    width: 80%;
   }
   .singolo{
     width: calc(100% / 6 - 30px)
   }
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1500px) {
   .musics{
-    width: 95%;
+    width: 90%;
   }
   .singolo{
     width: calc(100% / 4 - 30px)
@@ -299,12 +452,11 @@ footer{
   aside{
     width: 60px;
   }
-  .nav{
+  .nav , .profile{
     padding:0 10px;
   }
   .nav .icone li img{
     margin: auto;
-
   }
   main{
     margin-left: 50px;
@@ -325,6 +477,16 @@ footer{
   .d-block{
     display: block;
   }
+  .logo-cell{
+    margin-bottom: 30px;
+  }
+  .profile img:nth-child(2){
+    display: block;
+  }
+  .profile .app  img{
+    margin:auto;
+  }
+
 
 }
 
