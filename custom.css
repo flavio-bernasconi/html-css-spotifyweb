@@ -229,16 +229,11 @@ main{
 
 
 
-
-
-
-
-
 /* SEZIONE ALBUM E ARTISITI */
 .musics{
   display: flex;
   flex-flow: row wrap;
-  width: 85%;
+  max-width: 1350px;
   margin:auto;
   margin-bottom: 60px;
 }
@@ -300,6 +295,8 @@ main{
   padding-bottom: 7px;
   font-size: 14px;
   font-weight: 600;
+  text-transform: capitalize;
+
 }
 .singolo a:nth-child(3){
   margin-top: 3px;
@@ -406,6 +403,7 @@ main{
 .player{
   width: 50%;
   height: 100%;
+  max-width: 700px;
   margin: auto;
   display: flex;
   justify-content: space-around;
@@ -435,16 +433,7 @@ main{
 }
 .prev{
   transform: rotate(180deg);
-
 }
-.icone-barra  svg{
-  fill: white;
-  opacity: .7
-}
-.icone-barra  svg:hover{
-  opacity: 1
-}
-
 .timeline{
   display: flex;
   justify-content: center;
@@ -467,6 +456,7 @@ main{
 
 .volume{
   width: 18%;
+  max-width: 350px;
   display: flex;
   justify-content: center;
   align-items:center;
@@ -481,7 +471,7 @@ main{
 
 
 
-
+/* MENU CELLULARE */
 .cell-menu{
   display: none;
 }
@@ -491,51 +481,59 @@ main{
   flex-wrap: wrap;
   list-style: none;
   padding: 0;
+  flex-direction: column;
 }
-.cell-menu ul li{
-  width: calc(100% / 3);
-  margin: 20px 0;
+.cell-menu ul li {
   position: relative;
-}
+  margin: 13px 20px;
 
-.cell-menu li img{
-  max-width: 200px;
-  display: block;
-  margin: 0 auto;
-  opacity: .6;
-}
-.cell-menu li img:hover{
-  opacity: 1;
-  cursor: pointer;
-}
-
-
-
-.cell-menu li .box{
-  max-width: 200px;
-  height: 200px;
-  display: block;
-  margin: 0 auto;
 }
 
 .cell-menu ul li a{
-  display: block;
   text-align: center;
   text-transform: capitalize;
   color: white;
-  font-size: 35px;
-  font-weight: 700;
-  position: absolute;
-  top:50%;
-  left: 50%;
-  transform: translate(-50% , -50%);
+  font-size: 20px;
+  display: block;
+  opacity: .5
+}
+.cell-menu ul li a:hover{
+  opacity: 1;
+}
+.cell-menu ul li:first-child a{
+  opacity:1
 }
 
+
+
+.cell-menu ul li::before{
+  position: absolute;
+  content: '';
+  height: 50px;
+  bottom: -8px;
+  margin: 0 auto;
+  left: -30px;
+  width: 5px;
+  background: rgb(29,184,83);
+  opacity:.2
+}
+.cell-menu ul li:hover::before{
+  opacity:1
+}
+
+.cell-menu ul li:first-child::before{
+  opacity:1
+}
+
+
+
+
+
 .linee{
-  width: 31px;
-  height: 3px;
+  width: 33px;
+  height: 4px;
   border-radius: 10px;
-  background: white;
+  background: rgb(28,184,83);
 }
 .linee:nth-child(2){
   margin: 7px 0;
@@ -633,7 +631,7 @@ main{
  }
 
  .dropbtn {
-   background-color: rgb(28,184,83);
+   background-color: white;
    color: white;
    padding: 13px;
    font-size: 16px;
@@ -655,6 +653,7 @@ main{
  .dropdown-content {
    display: none;
    position: absolute;
+   padding: 20px;
    left: 30px;
    background-color: rgb(40, 40, 40);
    min-width: 360px;
@@ -663,7 +662,9 @@ main{
  }
 
  .dropdown:hover .dropdown-content {display: block;}
-
+ .dropdown:hover .dropbtn{
+   box-shadow: 4px -2px 10px rgba(28, 28, 28, 1)
+ }
 
 
 
@@ -680,24 +681,12 @@ main{
   .singolo{
     width: calc(100% / 2 - 30px)
   }
-  .cell-menu ul li{
-    width: calc(100% / 2);
-    margin: 20px 0;
-  }
+
 }
 
 @media (max-width: 576px) {
   .singolo{
     width: calc(100% / 1 - 30px)
-  }
-  .cell-menu ul li{
-    width: calc(100% / 1);
-    margin: 20px 0;
-
-  }
-  .cell-menu ul{
-    height: 50vh;
-    overflow: scroll;
   }
 
  }
