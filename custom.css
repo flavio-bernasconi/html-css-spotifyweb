@@ -173,10 +173,12 @@ main{
 
 
 /* menu nella sezione  usica dove selezioni che tipo di audio ascoltare */
-.menu-options{
+.menu-options ul{
   display: flex;
   justify-content: center;
-  padding: 60px 0;
+  flex-wrap: wrap;
+  padding: 60px 15px;
+  margin: 0
 }
 .menu-options ul li{
   display: inline-block;
@@ -210,6 +212,27 @@ main{
 .menu-options ul li a:hover{
   opacity: 1;
 }
+
+
+.menu-options {
+  position: relative;
+}
+
+
+.menu-options .humburger > div{
+  width: 40px;
+  height: 3px;
+  background: white;
+  border-radius: 7px;
+  margin: 6px 0;
+}
+
+
+
+
+
+
+
 
 /* SEZIONE ALBUM E ARTISITI */
 .musics{
@@ -255,6 +278,12 @@ main{
   padding: 15px;
 }
 
+/* non si vedono su mobile */
+.album .d-none{
+  display: contents;
+}
+
+
 .singolo{
   width: calc(100% / 6 - 30px);
 }
@@ -263,15 +292,18 @@ main{
   color: white;
   display: block;
   text-align: center;
+  letter-spacing: 1px;
 }
 
 .singolo a:nth-child(2){
   padding-top: 15px;
   padding-bottom: 7px;
+  font-size: 14px;
+  font-weight: 600;
 }
 .singolo a:nth-child(3){
   margin-top: 3px;
-  font-size: 15px;
+  font-size: 12px;
   text-transform: capitalize;
   opacity: .5;
 }
@@ -330,7 +362,9 @@ main{
   padding: 10px 0;
   padding-left:20px;
 }
-
+.barra img:hover{
+  cursor: pointer;
+}
 
 .song{
   display: flex;
@@ -436,11 +470,79 @@ main{
   display: flex;
   justify-content: center;
   align-items:center;
+  padding-right: 20px;
+
 }
 
 .volume input[type=range]{
   width: 35%;
 }
+
+
+
+
+
+.cell-menu{
+  display: none;
+}
+.cell-menu ul {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+}
+.cell-menu ul li{
+  width: calc(100% / 3);
+  margin: 20px 0;
+  position: relative;
+}
+
+.cell-menu li img{
+  max-width: 200px;
+  display: block;
+  margin: 0 auto;
+  opacity: .6;
+}
+.cell-menu li img:hover{
+  opacity: 1;
+  cursor: pointer;
+}
+
+
+
+.cell-menu li .box{
+  max-width: 200px;
+  height: 200px;
+  display: block;
+  margin: 0 auto;
+}
+
+.cell-menu ul li a{
+  display: block;
+  text-align: center;
+  text-transform: capitalize;
+  color: white;
+  font-size: 35px;
+  font-weight: 700;
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50% , -50%);
+}
+
+.linee{
+  width: 31px;
+  height: 3px;
+  border-radius: 10px;
+  background: white;
+}
+.linee:nth-child(2){
+  margin: 7px 0;
+}
+
+
+
 
 
 
@@ -483,8 +585,8 @@ main{
     margin: auto;
   }
   main{
-    margin-left: 50px;
-    width: calc(100% - 50px);
+    margin-left: 60px;
+    width: calc(100% - 60px);
   }
   .singolo{
     width: calc(100% / 3 - 30px)
@@ -510,6 +612,60 @@ main{
   .profile .app  img{
     margin:auto;
   }
+  .album .d-none{
+    display: none;
+  }
+  .menu-options ul{
+    display: none;
+  }
+
+
+
+
+
+  .cell-menu{
+    display: block;
+  }
+ .dropdown {
+   position: relative;
+   display: block;
+   width: 80%;
+ }
+
+ .dropbtn {
+   background-color: rgb(28,184,83);
+   color: white;
+   padding: 13px;
+   font-size: 16px;
+   border: none;
+   cursor: pointer;
+   margin-top: 20px;
+   margin-left: 30px;
+   border-radius: 50%;
+   height: 60px;
+   width: 60px;
+
+ }
+ .cell-menu::after{
+   content: '';
+   display: table;
+   clear: both;
+ }
+
+ .dropdown-content {
+   display: none;
+   position: absolute;
+   left: 30px;
+   background-color: rgb(40, 40, 40);
+   min-width: 360px;
+   box-shadow: inset 4px -2px 10px rgba(28, 28, 28, 1);
+   z-index: 1;
+ }
+
+ .dropdown:hover .dropdown-content {display: block;}
+
+
+
 
 
 }
@@ -518,9 +674,15 @@ main{
 
   .album{
     justify-content: center;
+    width: 70%;
+    margin: 0 auto;
   }
   .singolo{
     width: calc(100% / 2 - 30px)
+  }
+  .cell-menu ul li{
+    width: calc(100% / 2);
+    margin: 20px 0;
   }
 }
 
@@ -528,13 +690,17 @@ main{
   .singolo{
     width: calc(100% / 1 - 30px)
   }
+  .cell-menu ul li{
+    width: calc(100% / 1);
+    margin: 20px 0;
+
+  }
+  .cell-menu ul{
+    height: 50vh;
+    overflow: scroll;
+  }
+
  }
-
-
-
-
-
-
 
 
 
