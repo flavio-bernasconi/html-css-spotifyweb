@@ -361,8 +361,8 @@ main{
   opacity: 0.9;
 }
 
-.cuore > img{
-  width: 18px;
+.cuore > img , .mic > img{
+  width: 17px;
   margin-right: 10px;
 }
 
@@ -379,16 +379,17 @@ main{
   align-items:
 }
 .icone-barra{
-  width: 100%;
+  width: 50%;
   display: flex;
   flex-wrap: nowrap;
-  justify-content: center;
+  justify-content: space-around;
   cursor: pointer;
   align-items: center;
+  margin: 0 auto;
 }
 
 .icone-barra img{
-  width: 20px;
+  width: 16px;
   margin: 0 20px;
   opacity: .7;
 }
@@ -398,25 +399,48 @@ main{
 .icone-barra img.big-icon{
   width: 35px;
 }
+.prev{
+  transform: rotate(180deg);
 
+}
+.icone-barra  svg{
+  fill: white;
+  opacity: .7
+}
+.icone-barra  svg:hover{
+  opacity: 1
+}
 
 .timeline{
   display: flex;
   justify-content: center;
 }
-input[type=range] {
+.timeline input[type=range] {
   width:80%;
+  transition: 0.4s all ease-out;
+
+}
+.timeline p{
+  color: white;
+  font-size: 12px;
+  margin: 0 10px;
+  opacity: .7
 }
 
 
 
+/* sezione destra volume */
 
 .volume{
-  width: 15%;
+  width: 18%;
+  display: flex;
+  justify-content: center;
+  align-items:center;
 }
 
-
-
+.volume input[type=range]{
+  width: 35%;
+}
 
 
 
