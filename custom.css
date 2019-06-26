@@ -7,7 +7,11 @@ body{
   font-family: Raleway;
   letter-spacing: 1px;
 }
-
+body::after{
+  content: '';
+  display: table;
+  clear: both;
+}
 a{
   text-decoration: none;
 }
@@ -154,8 +158,9 @@ aside{
 main{
   width: calc(100% - 230px);
   float: right;
+  padding-bottom: 160px;
 }
-/* spaziatore */
+/* spazio in fondo al main per non andare sopra al footer */
 .vuoto{
   height: 100px;
   width: 100%;
@@ -319,7 +324,6 @@ main{
   left: 50%;
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
-  text-align: center;
 }
 
 .container-img:hover > img {
@@ -659,7 +663,10 @@ main{
    z-index: 1;
  }
 
- .dropdown:hover .dropdown-content {display: block;}
+ .dropdown:hover .dropdown-content {
+   display: block;
+ }
+
  .dropdown:hover .dropbtn{
    box-shadow: 4px -2px 10px rgba(28, 28, 28, 1)
  }
