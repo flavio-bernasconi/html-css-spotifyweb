@@ -347,8 +347,7 @@ main{
   top: 0;
   transition: 0.7s ease;
   border: 50px solid black;
-  background: linear-gradient( #f7797d, #FBD786, #C6FFDD); 
-
+  background: linear-gradient( #c6ffdd, #fbd786 , #f7797d);
 }
 
 
