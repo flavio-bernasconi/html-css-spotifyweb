@@ -6,7 +6,29 @@ body{
   padding: 0;
   font-family: Raleway;
   letter-spacing: 1px;
+  background: black
 }
+
+footer{
+  animation: fade 0.6s ease-in;
+}
+aside{
+  animation: fade 1.4s ease-in;
+}
+main{
+  animation: fade 2.2s ease-in-out;
+}
+
+
+
+@keyframes fade {
+  from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+
+
 body::after{
   content: '';
   display: table;
@@ -337,6 +359,9 @@ main{
 }
 
 /* ANIMATED ALBUM */
+.animated{
+  position: relative;
+}
 .animated .cd{
   box-sizing: border-box;
   position: absolute;
@@ -350,26 +375,16 @@ main{
   background: linear-gradient( #c6ffdd, #fbd786 , #f7797d);
 }
 
-
-
 .animated:hover .cd{
   top:-50px;
-
-}
-
-.animated:active .cd{
   animation: spin 2s infinite ;
-
 }
 
 @keyframes spin {
   0%{
     transform: rotate(360deg);
   }
-
 }
-
-/* delete play icon */
 .animated .middle img{
   display: none;
 }
@@ -382,8 +397,40 @@ main{
   transition: .5s;
 }
 .animated:hover > img{
-  transform: scale(0.7);
+  transform: scale(0.6);
   opacity: 1;
+}
+
+
+.animated-2{
+  position: relative;
+}
+.animated-2 .cd-2{
+  box-sizing: border-box;
+  position: absolute;
+  z-index: -3;
+  width:70px;
+  height:70px;
+  border-radius: 50%;
+  left:0;
+  transition: 0.7s ease;
+  border: 15px solid black;
+  background: linear-gradient( #c6ffdd, #fbd786 , #f7797d);
+}
+
+.barra:hover .cd-2{
+  left:30px;
+  animation: spin 2s infinite ;
+}
+
+
+.animated-2 .link-artist{
+  margin-left:0px;
+  transition: .3s;
+}
+
+.barra:hover .link-artist{
+  margin-left:30px;
 }
 
 
@@ -666,10 +713,6 @@ main{
     display: none;
   }
 
-
-
-
-
   .cell-menu{
     display: block;
   }
@@ -723,6 +766,9 @@ main{
 
 
 
+
+
+
 }
 
 @media (max-width: 768px) {
@@ -741,6 +787,9 @@ main{
 @media (max-width: 576px) {
   .singolo{
     width: calc(100% / 1 - 30px)
+  }
+  .icone-barra img:first-child , .icone-barra img:last-child{
+    display: none;
   }
 
  }
