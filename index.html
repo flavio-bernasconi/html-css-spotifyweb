@@ -70,12 +70,11 @@
             <p>Install App</p>
             </a>
           </li>
-          <hr>
           <li class="profile-section">
             <a href="#"  class="profile-link">
               <img src="img/1.png" alt="" class="d-none">
               <img src="img/account.jpg" alt="" >
-              <p>Flavio bernasconi</p>
+              <p id="nome-profilo"></p>
             </a>
           </li>
         </ul>
@@ -104,9 +103,9 @@
         <div class="cell-menu">
           <div class="dropdown " style="float:left;">
             <button class="dropbtn">
-              <div class="linee"></div>
-              <div class="linee"></div>
-              <div class="linee"></div>
+              <span class="linee"></span>
+              <span class="linee"></span>
+              <span class="linee"></span>
             </button>
             <div class="dropdown-content" >
               <ul>
@@ -141,8 +140,9 @@
           <a href="#" class="more d-block">view more</a>
         </div>
         <div class="album">
-          <div class="singolo">
-            <a href="#" class="container-img">
+          <div class="singolo ">
+            <a href="#" class="container-img animated">
+              <div class="cd"></div>
               <img src="img/1.png" alt="">
               <div class="middle">
                 <img src="img/play.svg" alt="">
@@ -352,6 +352,11 @@
         </div>
         <input class="d-none" type="range" name="" min="0" max="20">
       </footer>
+
+
+      <script type="text/javascript">
+        document.getElementById('nome-profilo').innerHTML = "Flavio Bernasconi"
+      </script>
 
 
   </body>
